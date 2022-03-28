@@ -1,0 +1,42 @@
+<header >
+    <mat-toolbar   class="header-App"color="primary" fxLayout="column" fxLayoutAlign="space-between">
+        <div fxLayoutAlign="space-between">
+
+            <div fxLayoutAlign="space-around"  fxLayoutGap="30px">
+                <span>My App</span>
+                <div fxLayoutGap="10px">
+                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/home']" style="color: white;">Home</a>
+                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/about']" style="color: white;">About</a>
+                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/peopleList']" style="color: white;">People List</a>
+                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/profile']" style="color: white;">Profile</a>
+
+                </div>
+
+            </div>
+
+            <div style="text-align: center;" fxLayout="column"  >
+                <div>
+                <span style="font-size:medium;" fxShow="false" fxShow.gt-xs="fxShow.gt-xs">
+
+                    Welcome
+                    {{UserName.name | uppercase}}
+                    :
+                </span>
+                <span style="font-size:medium;">
+                    {{date | date}}
+                </span></div>
+                <div fxLayoutAlign="end start" style=" font-size: 100px;
+                ">
+                <mat-icon  [routerLink]="['/login']">exit_to_app</mat-icon>
+                 <span  style="font-size: 1rem;">
+                    logout
+                </span></div>
+               
+            </div>
+
+
+            <!--  <span>{{x|currency:'EUR'}}</span>-->
+        </div>
+
+    </mat-toolbar>
+</header>
