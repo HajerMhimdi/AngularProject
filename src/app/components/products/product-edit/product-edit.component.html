@@ -1,0 +1,59 @@
+<div class="container" *ngIf="productFormGroup">
+    {{productFormGroup.value | json}}
+    <form [formGroup]="productFormGroup" fxLayout="column" fxLayoutAlign="center"
+        (ngSubmit)="onEdit()">
+<div class="form-group">
+    <mat-label>ID :</mat-label>
+
+            <mat-form-field appearance="outline">
+                <input matInput="matInput" formControlName="id">
+
+            </mat-form-field>
+</div>
+        <div fxLayout="column">
+            <mat-label>Name :</mat-label>
+
+            <mat-form-field appearance="outline">
+                <input matInput="matInput" placeholder="Name" formControlName="name"
+                    [ngClass]="{'is-invalid': submitted && productFormGroup.controls.name.errors}">
+
+            </mat-form-field>
+
+            <div *ngIf="submitted && productFormGroup.controls.name.errors" >
+                <div *ngIf="productFormGroup.controls.name.errors.required" style="color: red;">Name is required</div>
+            </div>
+
+        </div>
+
+
+        <mat-label>Price :</mat-label>
+
+        <mat-form-field appearance="outline">
+            <input matInput="matInput" placeholder="Price" formControlName="price">
+            <mat-hint>Hint</mat-hint>
+
+        </mat-form-field>
+
+        <mat-label>Quantity :</mat-label>
+
+        <mat-form-field appearance="outline">
+            <input matInput="matInput" placeholder="Quantity" formControlName="quantity">
+            <mat-hint>Hint</mat-hint>
+
+        </mat-form-field>
+
+        <mat-checkbox formControlName="selected">Selected</mat-checkbox>
+        <mat-checkbox formControlName="available">Available</mat-checkbox>
+
+
+
+
+
+<div>
+
+    <button mat-raised-button="mat-raised-button">
+        add
+    </button>
+</div>
+    </form>
+</div>

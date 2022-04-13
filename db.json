@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "computer",
+      "price": 4300,
+      "quantity": 820,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "mouses",
+      "price": 200,
+      "quantity": 1800,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "screen HD",
+      "price": 800,
+      "quantity": 450,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "keyboard",
+      "price": 60,
+      "quantity": 600,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "smartPhone Apple",
+      "price": 4000,
+      "quantity": 80,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 8,
+      "name": "central unity",
+      "price": "4800",
+      "quantity": "4500",
+      "selected": true,
+      "available": false
+    }
+  ]
+}
