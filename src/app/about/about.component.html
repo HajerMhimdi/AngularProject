@@ -45,11 +45,63 @@
 </div>
    </div>
     -->
+    <div class="main-container" fxLayout="column" fxLayoutGap="50px">
 
-    <div class="div-About">
         <app-header ></app-header>
-      <div>
-          <p>about works</p>
-      </div>
+      <!--Update Users---------------------------------------------------------------------------------------------------------------------------------------->
+    <div fxLayout="column" fxLayoutGap="50px">
+        <h1 style="color: brown;">Update Users</h1>
+          <form fxLayout="column" [formGroup]="myForm" (ngSubmit)="updateUser()" >
+            <mat-label style="font-weight: bolder;">FirstName : </mat-label>
+  
+              <mat-form-field appearance="fill" >
+  
+                  
+  
+                  <input matInput="matInput" placeholder="firstName" formControlName="firstname">
+             
+              </mat-form-field>
+              <div fxLayout="column" *ngIf="firstName.touched && firstName.invalid">
+                <small style="color: red;" *ngIf="firstName.errors.required">FirstName is required</small>
+                <small  style="color: red;" *ngIf="firstName.errors.pattern">invalid FirstName</small>
+                <small  style="color: red;" *ngIf="firstName.errors.minlength">firstName must contain three characters at least</small>
+                <small  style="color: red;" *ngIf="firstName.errors.maxlength">firstName must contain sixteen characters at most</small>
+                
+                                </div>
+                                <mat-label style="font-weight: bolder;">LastName : </mat-label>
+  
+              <mat-form-field appearance="fill">
+  
+                    
+  
+                      <input matInput="matInput" placeholder="lastName" formControlName="lastname">
+              </mat-form-field>
+              <div fxLayout="column" *ngIf="lastName.touched && lastName.invalid">
+                <small style="color: red;" *ngIf="lastName.errors.required">LastName is required</small>
+                <small  style="color: red;" *ngIf="lastName.errors.pattern">invalid LastName</small>
+                <small  style="color: red;" *ngIf="lastName.errors.minlength">LastName must contain three characters at least</small>
+                <small  style="color: red;" *ngIf="lastName.errors.maxlength">LastName must contain sixteen characters at most</small>
+                
+                                </div>
+                                <mat-label style="font-weight: bolder;">Email : </mat-label>
+  
+              <mat-form-field appearance="fill">
+                         
+                          <input matInput="matInput" placeholder="email" formControlName="email">
+              </mat-form-field>
+              <div fxLayout="column" *ngIf="Email.touched && Email.invalid">
+                <small style="color: red;" *ngIf="Email.errors.required">Email is required</small>
+                <small  style="color: red;" *ngIf="Email.errors.pattern">invalid Email</small>
+               
+                                               </div>
+              
+                                  <div>
+                                      <button mat-raised-button="mat-raised-button" [disabled]="myForm.invalid" style="background-color: rgb(4, 76, 124);" >
+                                          Modify</button>
+                                          <div *ngIf="alert" class="alert alert-success" role="alert">    This is user is updated succeffully</div>
+
+                                  </div>
+                              </form>
+                          </div>
     
-    </div>  <app-footer ></app-footer>
+   </div>

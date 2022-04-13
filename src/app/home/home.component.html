@@ -1,7 +1,10 @@
-<div class="main-container">
-    <app-header ></app-header>
-  <div>
-      hello home
-  </div>
+<div class="main-container" fxLayout="column" fxLayoutGap="10px">
+  <app-header ></app-header>
+  <div class="alert alert-info" role="alert">You are connected since : <span>{{seconde}}</span></div>
 
-</div>  <app-footer ></app-footer>
+    <div class="main-container" fxLayout="column" fxLayoutGap="50px">
+      <h1 style="color: brown;">Number of Users</h1>
+  <div class="alert alert-warning" role="alert" fxLayout="row"><h1>you get  total of <span  style="color: blue;"> {{users.length}} </span >  users </h1> </div>
+</div>
+
+</div>  

@@ -6,7 +6,8 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -22,14 +23,15 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { PeopleListComponent } from './people-list/people-list.component';
 import { HeaderComponent } from './header/header.component';
+import { DialogFromMenuExampleComponent } from './people-list/components/dialog-from-menu-example/dialog-from-menu-example.component';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { HeaderComponent } from './header/header.component';
     RegisterComponent,
     PeopleListComponent,
     HeaderComponent,
+    DialogFromMenuExampleComponent,
+
  
   ],
   imports: [
@@ -62,8 +66,10 @@ import { HeaderComponent } from './header/header.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule, 
-
-
+    ReactiveFormsModule,
+    CommonModule,
+    MatDialogModule,
+    HttpClientModule,
 
   ],
   exports: [FlexLayoutModule],

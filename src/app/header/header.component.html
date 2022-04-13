@@ -1,33 +1,33 @@
-<header >
-    <mat-toolbar   class="header-App"color="primary" fxLayout="column" fxLayoutAlign="space-between">
+    <mat-toolbar   class="header-App" style=" color: white;background-color: rgb(4, 76, 124);" fxLayout="column" fxLayoutAlign="space-between"   fxFlex="100%">
         <div fxLayoutAlign="space-between">
 
             <div fxLayoutAlign="space-around"  fxLayoutGap="30px">
-                <span>My App</span>
+                <span fxHide.lt-sm>My App</span>
                 <div fxLayoutGap="10px">
-                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/home']" style="color: white;">Home</a>
-                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/about']" style="color: white;">About</a>
-                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/peopleList']" style="color: white;">People List</a>
-                    <a mat-stroked-button="mat-stroked-button" [routerLink]="['/profile']" style="color: white;">Profile</a>
+                    <a mat-stroked-button  [routerLink]="['/home']" style="color: white;">Home</a>
+                    <a mat-stroked-button  [routerLink]="['/peopleList']" style="color: white;">People List</a>
+                    <a mat-stroked-button  [routerLink]="['/profile']" style="color: white;">Profile</a>
+
 
                 </div>
 
             </div>
 
             <div style="text-align: center;" fxLayout="column"  >
-                <div>
-                <span style="font-size:medium;" fxShow="false" fxShow.gt-xs="fxShow.gt-xs">
+                <div fxHide.lt-sm>
+                <span style="font-size:medium;">
 
                     Welcome
                     {{UserName.name | uppercase}}
                     :
                 </span>
-                <span style="font-size:medium;">
+                <span style="font-size:medium;" >
                     {{date | date}}
                 </span></div>
-                <div fxLayoutAlign="end start" style=" font-size: 100px;
-                ">
-                <mat-icon  [routerLink]="['/login']">exit_to_app</mat-icon>
+                <div fxLayoutAlign="end start" style=" font-size: 100px; padding: 5px;">
+               
+               
+                    <mat-icon  (click)="logout()">exit_to_app</mat-icon>
                  <span  style="font-size: 1rem;">
                     logout
                 </span></div>
@@ -39,4 +39,3 @@
         </div>
 
     </mat-toolbar>
-</header>

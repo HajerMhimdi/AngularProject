@@ -1,8 +1,38 @@
-<div class="main-container">
-    <app-header ></app-header>
-  <div>
-      <p>people-list works!</p>
+<div class="main-container" fxLayout="column" fxLayoutGap="50px">
+    <app-header></app-header>
+    <div class="main-container" fxLayout="column" fxLayoutGap="50px">
+        <h1 style="color: brown;">List of Users</h1>
+        <div *ngIf="users.length == 0" class="alert" style="background-color: rgb(240, 227, 168);">
+            No User Found ...
+        </div>
+        <div *ngFor="let user of users; let i = index">
 
-  </div>
+            <h2>N° User: {{i}}</h2>
 
-</div>  <app-footer ></app-footer>
+            <h3>
+                <a [title]="user.name + ' details' ">
+                    {{user.firstname }}
+                    <span></span>
+                    {{user.lastname }}
+                </a>
+            </h3>
+
+
+            <p *ngIf="user.email">
+                Email:
+                {{user.email}}
+
+            </p>
+
+       
+    
+            <div fxLayout="row" fxLayoutGap="20px">
+            <button mat-raised-button="mat-raised-button" (click)="alertDialogue()" style="background-color: rgb(10, 201, 67);"  >
+                description</button>
+            <button mat-raised-button="mat-raised-button" (click)="delete(user)" style="background-color: rgb(245, 56, 22);">
+                delete</button>
+                <button mat-raised-button="mat-raised-button" style="background-color: rgb(245, 122, 22);" [routerLink]="['/updateUser',user._id]" >
+                    update</button>
+      </div>  </div>
+    </div>
+    

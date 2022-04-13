@@ -1,0 +1,57 @@
+<div style="flex: 1;" fxLayout="row" >
+
+
+  <div style="display:flex;height: 100%; width: 60%;background-color: rgb(4, 76, 124); background-size: cover" fxHide.lt-sm >
+    <img fxHide.lt-sm  fxFlex="100%" src="./assets/image.png"/>
+
+</div>
+
+    <div style="display:flex;flex: 1;  width: 40%;  width: 40%;" fxLayoutAlign="center center"  >
+        <div style="height:auto;  width: 100%;" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+
+            <div style="display: flex;width: 90%;height: 10%;" fxLayout="row" fxLayoutAlign="center center">
+    <span style="font-size: 2rem;">identification</span>
+    </div>
+    <div  style="width: 90%;height: 15%;">
+      <form  fxLayout="column" [formGroup]="myForm" (ngSubmit)="login()">
+
+
+        <mat-form-field appearance="fill">
+           
+        <mat-label > Email </mat-label>
+        
+        <input matInput formControlName="email">
+
+      </mat-form-field>
+      <div fxLayout="column" *ngIf="Email.touched && Email.invalid">
+        <small style="color: red;" *ngIf="Email.errors.required">Email is required</small>
+        <small  style="color: red;" *ngIf="Email.errors.pattern">invalid Email</small>
+       
+                                       </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password">
+        
+      </mat-form-field>
+      <div fxLayout="column" *ngIf="Password.touched && Password.invalid">
+        <small style="color: red;" *ngIf="Password.errors.required">Password is required</small>
+        <small  style="color: red;" *ngIf="Password.errors.pattern">invalid Password</small>
+       
+                                       </div>
+       <div  style="width: 90%;height: 10%;" fxLayout="row" fxLayoutAlign="end end">
+     
+        <button mat-raised-button style=" color: white;background-color: rgb(4, 76, 124);" [disabled]="myForm.invalid" routerLinkActive="router-link-active" >Sign in</button>
+  
+    
+    </div>  
+  </form>
+    
+    </div>
+ 
+    <div  style=" width: 90%;height: 10%;"  fxLayout="row" fxLayoutAlign="center center">
+   
+    <span>if you don't have an account yet, you can register from this  <a [routerLink]="['/register']">Link</a></span>
+    </div>
+  </div>
+    </div>
+</div>
