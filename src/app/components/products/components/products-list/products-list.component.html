@@ -1,0 +1,41 @@
+<div style="padding: 53px;">
+    <ng-container *ngIf="(productsInput$ | async) as result" [ngSwitch]="result.dataState" >
+        
+        <ng-container *ngSwitchCase="DataStateEnum.LOADING"><div><h1>lOADING ....</h1></div></ng-container>
+        <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+            <div class="alert-danger">
+                {{result.errorMessage}}
+            </div>
+        </ng-container>
+        <div class="mat-elevation-z8">
+        <ng-container *ngSwitchCase="DataStateEnum.LOADED" >
+        <table mat-table class="mat-elevation-z8 demo-table">
+    
+            <ng-container matColumnDef="position">
+                <th mat-header-cell > ID </th>
+                <th mat-header-cell> Name </th>
+                <th mat-header-cell > Price </th>
+                <th mat-header-cell > Quantity </th>
+                <th mat-header-cell > Selected </th>
+                <th mat-header-cell > Available </th>
+               
+                     <app-product-item 
+                     [product]="p" 
+                     (eventEmitter)="onActionEvent($event)" 
+                     *ngFor="let p of result.data"
+                     style="  display: contents; ">
+                    
+
+                  
+                </app-product-item>
+
+              </ng-container>
+    
+    
+        </table>
+        
+    </ng-container>
+    </div>
+    </ng-container>
+    </div>
+    

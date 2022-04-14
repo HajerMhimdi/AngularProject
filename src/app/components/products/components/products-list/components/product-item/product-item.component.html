@@ -1,0 +1,27 @@
+<tr *ngIf="product">
+    <td mat-cell style="font-weight: bold;" > {{product.id}} </td>
+    <td mat-cell> {{product.name}} </td>
+    <td mat-cell> {{product.price}} </td>
+
+    <td mat-cell> {{product.quantity}} </td>
+    <td mat-cell> {{product.selected}} </td>
+    <td mat-cell> {{product.available}} </td>
+    <td mat-cell>
+        <button mat-raised-button (click)="onSelect(product)" [ngStyle]="{'background-color':product.selected ? 'green': 'red' }">
+            <span *ngIf="product.selected">Unselect</span>
+            <span *ngIf="!product.selected">Select</span>
+
+        </button>
+    </td>
+    <td>
+        <button  mat-mini-fab color="warn" (click)="onDelete(product)">
+            <mat-icon style="color: white;">delete_forever</mat-icon>
+                        </button>
+    </td>
+    <td>
+        <button  mat-mini-fab color="primary" (click)="editProduct(product)">
+            <mat-icon style="color: white;">update</mat-icon>
+                        </button>
+    </td>
+
+</tr>

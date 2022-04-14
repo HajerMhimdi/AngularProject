@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light" style="padding-left: 25px;padding-right: 25px" fxLayoutAlign="space-between "  >
+   
+    <div fxLayout="row" fxLayoutGap="30px">
+        <button mat-stroked-button (click)="onGetAllProducts()" color="accent">All</button>
+    
+        <button mat-stroked-button (click)="onGetSelectedProducts()" color="accent">Selected</button>
+    
+        <button mat-stroked-button (click)="onGetAvailableProducts()" color="accent">Available</button>
+        <button mat-raised-button (click)="addNewProduct()" color="accent">Create</button>
+    
+    </div>
+    <div>
+        <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+            <div  fxLayout="row" style="width: 90;height: 10px;font-size: 10px; " >
+                
+                <mat-form-field class="matFormField" appearance="fill" fxFlex="100">
+                    <input ngModel name="keyword" matInput class="form-control">
+                </mat-form-field>
+                <button mat-mini-fab>
+                <mat-icon >search</mat-icon>
+            </button>
+            </div>
+        </form>
+    </div>
+    </nav> 

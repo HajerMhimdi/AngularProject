@@ -24,9 +24,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductAddComponent } from './components/products/product-add/product-add.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { ProductEditComponent } from './components/products/product-edit/product-edit.component'
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductsNavBarComponent } from './components/products/components/products-nav-bar/products-nav-bar.component';
+import { ProductsListComponent } from './components/products/components/products-list/products-list.component';
+import { ProductItemComponent } from './components/products/components/products-list/components/product-item/product-item.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,9 @@ import { ProductEditComponent } from './components/products/product-edit/product
     HomeComponent,
     ProductAddComponent,
     ProductEditComponent,
+    ProductsNavBarComponent,
+    ProductsListComponent,
+    ProductItemComponent,
 
   ],
   imports: [
